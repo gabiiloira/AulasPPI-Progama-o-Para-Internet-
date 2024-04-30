@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio8</title> <!--Copiar texto-->
+</head>
+<body>
+    <label for="inputTexto">Digite um texto:</label>
+    <input type="text" id="inputTexto">
+    <button onclick="copiarTexto()">Copiar Texto</button>
+    
+    <div class="textos">
+      <!-- Aqui será exibido o texto copiado -->
+    </div>
+    
+    <script>
+        function copiarTexto() {
+        var texto = document.getElementById("inputTexto").value; //pede o valor de entrada
+
+        //verificação se o campo de entrada não está vazio
+        if (texto.trim() !=="") {
+
+            var novoParagrafo = document.createElement("p");  //cria um novo elemento parágrafo
+            var textoNode = document.createTextNode(texto);    //cria um nó de texto com o conteúdo do campo de entrada
+
+            novoParagrafo.appendChild(textoNode);         //adiciona o nó de texto ao novo parágrafo
+
+            var divTextos = document.querySelector(".textos");    //obtem a referência da div onde o texto será exibido
+
+            divTextos.appendChild(novoParagrafo);   //adiciona o novo parágrafo à div
+
+
+
+            document.getElementById("inputTexto").value = "";   //aqui limpa o campo de entrada
+
+        } else {
+            //se o campo de entrada estiver vazio, exibe um alerta
+            alert("Por favor, digite um texto antes de copiar.");
+        }
+    }
+    </script>
+</body>
+</html>

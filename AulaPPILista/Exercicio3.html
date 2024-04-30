@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio3</title>
+</head>
+<body>
+    <script>
+            //pede as informações
+            var inputA = prompt("Digite o número A:");
+            var inputB = prompt("Digite o número B:");
+
+            //converte as entradas de string para números usando parseFloat()
+            var numA = parseFloat(inputA);
+            var numB = parseFloat(inputB);
+
+            //verifica se as entradas são números válidos
+            if (!isNaN(numA) && !isNaN(numB)) {
+               
+                var soma = numA + numB; //calcula
+               
+                console.log("A soma de " + numA + " e " + numB + " é igual a " + soma); //imprime a soma no console
+            } else {
+                //se uma ou ambas as entradas não forem números válidos, exibe uma mensagem de erro
+                console.log("Por favor, digite números válidos.");
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio10(B)</title> <!--numero aleatorio-->
+
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+
+            button {
+                font-size: 24px;
+                padding: 10px 20px;
+                border: none;
+                background-color: dodgerblue;
+                color: #fff;
+                cursor: pointer;
+                border-radius: 5px;
+                margin-right: 10px;
+            }
+
+            input {
+                font-size: 18px;
+                padding: 5px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+        </style>
+</head>
+<body>
+
+<input type="number" id="inputMin" placeholder="Valor Mínimo">
+<input type="number" id="inputMax" placeholder="Valor Máximo">
+<button id="gerarNumero">Gerar Número Aleatório</button>
+
+        <script>
+            //os campos de entrada e o botão
+            var inputMin = document.getElementById('inputMin');
+            var inputMax = document.getElementById('inputMax');
+            var botao = document.getElementById('gerarNumero');
+            
+            //evento de clique ao botão
+            botao.addEventListener('click', function() {
+                
+                //valores mínimo e máximo
+                var min = parseInt(inputMin.value);
+                var max = parseInt(inputMax.value);
+                
+                //verificação se os valores são válidos
+                if (isNaN(min) || isNaN(max)) {
+                    alert('Por favor, insira valores válidos para o mínimo e máximo.');
+                    return;
+                }
+
+                //verifica se o valor mínimo é menor que o valor máximo
+                if (min >= max) {
+                    alert('O valor mínimo deve ser menor que o valor máximo.');
+                    return;
+                }
+
+                //gera um número aleatório entre min e max
+                var numeroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
+                
+                //mostra o número aleatório em um alerta
+                alert('Número Aleatório: ' + numeroAleatorio);
+            });
+        </script>
+</body>
+</html>

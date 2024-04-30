@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio2</title>
+</head>
+<body>
+
+    <!--Os dois fazem a mesma coisa porém, esse aqui esta escrevendo no documento-->
+    <script>
+            document.getElementById("output").innerText = "HelloWorld";
+    </script>
+
+
+    <!--se o script for executado antes do elemento com o ID "output" ser definido no corpo do documento, ele não encontrará esse elemento e não fará nada-->
+    <script>
+            document.getElementById("output").innerText = "HelloWorld";
+    </script>
+</head>
+<body>
+    <div id="output"></div>
+</body>
+</html>

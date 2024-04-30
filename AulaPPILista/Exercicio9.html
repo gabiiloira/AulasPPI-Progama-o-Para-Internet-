@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleExercicio9.css">
+<title>Exercicio9</title> <!--Contador de cliques-->
+</head>
+<body>
+
+<button id="contador">10</button>
+
+<style>
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/*botao colorido que quando clica, conta*/
+button {
+    font-size: 24px;
+    padding: 10px 20px;
+    border: none;
+    background-color: dodgerblue;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+</style>
+
+<!-- Para modificar o conteúdo de um campo de entrada (input), como um campo de texto, você geralmente 
+utiliza o atributo 'value'. Por exemplo: document.getElementById('campo').value = 'Novo valor'; 
+
+Para modificar o conteúdo de um botão, você geralmente utiliza o conteúdo entre as tags de abertura 
+e fechamento do botão. Por exemplo: document.getElementById('botao').textContent = 'Novo texto';-->
+
+
+        <script>
+            var botao = document.getElementById('contador');  //obtem o botão
+            
+            //variável para armazenar o contador
+            var contador = 10;
+
+            //adiciona um evento de clique ao botão
+            botao.addEventListener('click', function() {
+                //incrementa o contador
+                contador++;
+                //atualiza o texto do botão com o valor do contador
+                botao.textContent = contador;
+            });
+        </script>
+</body>
+</html>

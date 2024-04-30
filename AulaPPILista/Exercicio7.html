@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio7</title>  <!--Soma de dois numeros aleatorios-->
+</head>
+<body>
+    <label for="input1">Número 1:</label>
+    <input type="text" id="input1"><br><br>
+
+    <label for="input2">Número 2:</label>
+    <input type="text" id="input2"><br><br>
+
+    <button onclick="soma()">Calcular Soma</button>
+
+        <script>
+            function soma() {
+                //lê os valores dos campos de entrada
+                var num1 = document.getElementById("input1").value;
+                var num2 = document.getElementById("input2").value;
+
+                //converte os valores de string para números usando parseFloat()
+                var number1 = parseFloat(num1);
+                var number2 = parseFloat(num2);
+
+                //verificação se os valores são números válidos
+                if (!isNaN(number1) && !isNaN(number2)) {
+                    var resultado = number1 + number2; //calcula a soma
+
+                    console.log("Resultado da soma: " + resultado); //mostra o resultado no console
+                    document.getElementById("output").innerText = "Resultado da soma: " + resultado; //mostra o resultado no documento
+                    alert("Resultado da soma: " + resultado); //mostra o resultado em um alerta
+                } else {
+                    //se uma ou ambas as entradas não forem números válidos, exibe uma mensagem de erro
+                    console.log("Por favor, digite números válidos.");
+                    alert("Por favor, digite números válidos.");
+                }
+            }
+        </script>
+                <div id="output"></div>
+</body>
+</html>

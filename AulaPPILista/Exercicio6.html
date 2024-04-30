@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio6</title>
+</head>
+<body>
+    <script>
+        //pede dois numeros aleatorios
+        var inputX = prompt("Digite o primeiro número:");
+        var inputY = prompt("Digite o segundo número:");
+
+        //converte as entradas de string para números usando parseInt()
+        var x = parseInt(inputX);
+        var y = parseInt(inputY);
+
+        //verificação se os números são válidos
+        if (!isNaN(x) && !isNaN(y)) {
+            for (var i = x; i <= y; i++) {   //faz a contagem de 1 até o número informado
+                console.log(i); //mostra os números da contagem no console
+            }
+        } else {
+            //se uma ou ambas as entradas não forem números válidos, exibe um alerta de erro
+            console.log("Por favor, digite números válidos.");
+        }
+    </script>
+</body>
+</html>

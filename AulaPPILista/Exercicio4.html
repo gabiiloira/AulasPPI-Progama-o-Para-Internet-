@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio4</title>
+</head>
+<body>
+    <script>
+        var inputNumber = prompt("Digite um número:"); //pede um numero para o usuario
+
+        //converte a entrada de string para número usando parseInt()
+        var number = parseInt(inputNumber);
+
+        //verificação se o número é válido
+        if (!isNaN(number)) {
+            if (number % 2 === 0) {//verifica se o número é par ou ímpar
+
+                //número par, exibe um alerta informando que é par
+                alert("O número " + number + " é par.");
+            } else {
+                //número ímpar, exibe um alerta informando que é ímpar
+                alert("O número " + number + " é ímpar.");
+            }
+        } else {
+            //se a entrada não for um número válido, exibe um alerta de erro
+            alert("Por favor, digite um número válido.");
+        }
+    </script>
+</body>
+</html>
