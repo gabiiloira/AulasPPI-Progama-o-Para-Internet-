@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="meuinput">
+        <button id="btn" >salvar</button>
+        <div id="idparagrafos">
+
+        </div>
+    </input>
+</body>
+
+<script>
+    let txtinput=document.querySelector("#meuinput");
+    let btn=document.querySelector("#btn");
+    let listaparagrafos=document.querySelector("#idparagrafos");
+
+    function copiaTexto(){
+        listaparagrafos.innerHTML= listaparagrafos.innerHTML +"<div>" + txtinput.value + "</div>";
+    }
+
+    btn.addEventListener('click', copiaTexto);
+</script>
+</html>

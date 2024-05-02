@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>O resultado é:</h1>
+    <p id="presultado">-</p>
+</body>
+
+    <script>
+
+        let p=document.getElementById("presultado");
+
+        //aqui a gente tem que chamar a funcao no console
+        //ou seja digitar soma()
+        function soma(){
+        let = a=Number(prompt("Informe o valor de a:"));
+        let = b=Number(prompt("Informe o valor de b:"));
+
+        let paragrafo=document.getElementById("presultado");
+        paragrafo.innerHTML=a+b;
+        paragrafo.style.backgraoundColor="AA0000";
+        }
+        p.addEventListener('click', soma);
+
+        function mudaCor(){
+            p.addEventListener('click', mudaCor);
+            document.body.style.backgraoundColor="AD5698";
+        }
+        mudaCor();
+
+    </script>
+</html>
