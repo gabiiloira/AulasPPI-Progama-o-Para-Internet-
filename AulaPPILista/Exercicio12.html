@@ -3,9 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Exercicio12</title> <!--Randomize Cores-->
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Cor de fundo inicial */
+            transition: background-color 0.5s ease;
+        }
+        .content {
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333; /* Cor inicial do texto */
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="content">
+        <h1>Pressione a tecla de espaço para randomizar cores</h1>
+    </div>
+
+    <script>
+        // Cores fornecidas
+        const colors = ['#05668D', '#427AA1', '#EBF2FA', '#679436', '#A5BE00'];
+
+        // Função para escolher uma cor aleatória entre as fornecidas
+        function randomColor() {
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        // Event listener para detectar pressionamento da tecla de espaço
+        document.addEventListener('keydown', function(event) {
+            if (event.code === 'Space') {
+                // Randomiza as cores do fundo e do texto
+                document.body.style.backgroundColor = randomColor();
+                document.querySelector('h1').style.color = randomColor();
+            }
+        });
+    </script>
 </body>
 </html>

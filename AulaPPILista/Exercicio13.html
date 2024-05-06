@@ -1,0 +1,46 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercicio13</title> <!--Tecla Pressionada-->
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+            #keyDisplay {
+                width: 200px;
+                height: 100px;
+                background-color: white;
+                border: 2px solid white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2rem;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="keyDisplay"></div>
+    
+        <script>
+            // Seleciona a div para exibir as teclas pressionadas
+            const keyDisplay = document.getElementById('keyDisplay');
+    
+            // Event listener para detectar a tecla pressionada pelo usuário
+            document.addEventListener('keydown', function(event) {
+                // Cria um novo elemento para exibir a tecla pressionada
+                const keyPressedElement = document.createElement('div');
+                keyPressedElement.textContent = event.key;
+    
+                // Adiciona o novo elemento à div de exibição
+                keyDisplay.appendChild(keyPressedElement);
+            });
+        </script>
+    </body>
+    </html>
