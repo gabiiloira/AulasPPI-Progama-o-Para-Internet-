@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    //digitar uma letra, a tecla que bater ele vai aparecer na tela 
+
+    <style>
+        #container{
+            display: flex;
+            justify-content: center;
+            align-items:  center;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id ="container">
+    </div>
+</body>
+<script>
+    document.addEventListener("keypress", adicionateclaPressionada)
+
+  /*  function teclaPressionada(evento){
+        console.log(evento);
+        document.body.innerHTML+=evento.key;
+    }*/
+    function adicionaTeclaPressionada(event){
+
+        //adiciona um novo elemento div ao DOM
+        let div=document.createElement("div")
+
+
+        //preenche o conteudo da nova div com dado sobre evento
+        div.innerText=event.key;
+
+        //adiciona o elemento dix como filho o container
+        document.querySelector("#container").appendChild(div);
+    }
+</script>
+</html>

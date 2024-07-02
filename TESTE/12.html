@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display:flex;
+            height: 100px; /*tamanho da tela */
+        }
+        .box{
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box-1">
+            <p></p>
+        </div>
+        <div class="box" id="box-2">
+            <p></p>
+        </div>
+        <div class="box" id="box-3">
+            <p></p>
+        </div>
+        <div class="box" id="box-4">
+            <p></p>
+        </div>
+        <div class="box" id="box-5">
+            <p></p>
+        </div>
+    </div>
+    <script>
+
+        //style tMBEM É UM OBJETO
+        //O BODY É UM DOCUMENTO HTML
+       // document.querySelector("body").style.backgroundColor="#AABB00"
+        
+       document.body.addEventListener('keypress', sorteiaCores) //quando aperta nop espaco ele muda a cor 
+        
+
+        function randomNumber(){
+            //Math abstrai uma biblioteca pra retornar algo em matematica
+            //toLocaleUpperCase é para deixar as letras em maiusculo 
+            return Math.floor(Math.random()*255).toString(16).toLocaleUpperCase(); //[0..1]
+        }
+
+        function randomColor(){
+            //#HHHHHH
+            return "#"+randomNumber()+ randomNumber()+ randomNumber()
+        }
+
+        function setTextColor(elementHtml, colorText){
+            elementHtml.querySelector("p").innerHTML=colorText;
+        }
+
+        //captura um evento especifico e foi especionado, ou seja, espaco do teclado
+        function sorteiaCores(evento){
+            console.log(evento)
+                if((eveno.code=="Space")){
+                for(let i=1;i<5;i++){
+                      let box = document.querySelector("#box-"+i);
+                      let color=randomColor();
+                      setTextColor(box,color);
+                      box.style.backgroundColor=color;
+            }
+        }
+            //isso aqui embaixo é tudo lixo pois o de cima resume tudo isso 
+
+           /* let box1=document.querySelector("#box-1");
+            let box2=document.querySelector("#box-2");
+            let box3=document.querySelector("#box-3");
+            let box4=document.querySelector("#box-4");
+            let box5=document.querySelector("#box-5");
+
+            var tempColor;
+            tempColor = randomColor();
+            setTextColor(box1, tempColor);
+            box1.style.backgroundColor=tempColor();
+
+            //solucao mais ogra, pq vamos ter que fazer isso umas 5 vezes
+           //  var tempColor = randomColor();
+           // box1.childNodes[1].innerHTML = tempColor;
+
+            box2.style.backgroundColor=randomColor();
+            box3.style.backgroundColor=randomColor();
+            box4.style.backgroundColor=randomColor();
+            box5.style.backgroundColor=randomColor();*/
+        }
+
+    </script>
+</body>
+</html>
